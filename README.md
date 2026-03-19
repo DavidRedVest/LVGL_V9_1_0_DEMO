@@ -10,7 +10,13 @@
   ./run_lvgl
   ```
 
-  
+- 新增加 Makefile 用于macOS 环境下Clang多线程编译
+
+- 修改lv_conf.h及main.c，利用宏定义隔离windows GDI 与 macOS SDL2底层
+
+- 引入SDL2动态库并在LDFLAGS中配置RPATH解决运行时加载问题
+
+- 增加.gitignore文件，不上传.o文件和最终的可执行文件
 
 
 
