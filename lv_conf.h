@@ -22,14 +22,17 @@
 #if defined(_WIN32) || defined(__CYGWIN__)
     #define LV_USE_WINDOWS 1
     #define LV_USE_SDL 0
+    #define LV_USE_OS   LV_OS_WINDOWS
 #elif defined(__APPLE__)
     #define LV_USE_WINDOWS 0
     #define LV_USE_SDL 1
+    #define LV_USE_OS   LV_OS_PTHREAD
 #else
 
     /* 预留给未来的STM32 裸机或 RTOS环境 */
     #define LV_USE_WINDOWS 0
     #define LV_USE_SDL 0
+    #define LV_USE_OS   LV_OS_NONE
 #endif
 /*If you need to include anything here, do it inside the `__ASSEMBLY__` guard */
 #if  0 && defined(__ASSEMBLY__)
@@ -97,7 +100,7 @@
  * - LV_OS_RTTHREAD
  * - LV_OS_WINDOWS
  * - LV_OS_CUSTOM */
-#define LV_USE_OS   LV_OS_WINDOWS
+//#define LV_USE_OS   LV_OS_WINDOWS
 
 #if LV_USE_OS == LV_OS_CUSTOM
     #define LV_OS_CUSTOM_INCLUDE <stdint.h>
@@ -859,9 +862,9 @@
  * DEVICES
  *==================*/
 
- #if 0
+ #if 1
 /*Use SDL to open window on PC and handle mouse and keyboard*/
-#define LV_USE_SDL              0
+#define LV_USE_SDL              1
 #if LV_USE_SDL
     #define LV_SDL_INCLUDE_PATH     <SDL2/SDL.h>
     #define LV_SDL_RENDER_MODE      LV_DISPLAY_RENDER_MODE_DIRECT   /*LV_DISPLAY_RENDER_MODE_DIRECT is recommended for best performance*/
