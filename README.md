@@ -20,6 +20,8 @@
 
 - 完善 c_cpp_properties.json 配置，解决代码补全提示
 
+- 修复 lv_conf.h下LV_USE_SDL重复定义的问题，同时测试了win11下运行正常
+
 
 
 

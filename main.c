@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 {
 /*Initialize LVGL*/
     lv_init();
- 
+
     /* 根据平台初始化不同的显示和输入后端 */
-#if defined(_WIN32)    
+#if defined(_WIN32)
     /*Initialize the HAL for LVGL*/
     lv_display_t * display = lv_windows_create_display(title, 1024, 600, 100, FALSE, FALSE);
     lv_windows_acquire_pointer_indev(display);
@@ -44,14 +44,14 @@ int main(int argc, char *argv[])
     /* LVGL v9 的SDL初始化方式 */
     lv_display_t *display = lv_sdl_window_create(1024, 600);
     lv_sdl_mouse_create();
-    lv_sdl_keyboard_create(); 
+    lv_sdl_keyboard_create();
 #endif
     /*Output prompt information to the console, you can also use printf() to print directly*/
     LV_LOG_USER("LVGL initialization completed!");
 
-   // lv_demo_widgets();
+    lv_demo_widgets();
 
-    lesson_2_3_1();         // 基础对象(lv_obj)，"Hello, LVGL
+    //lesson_2_3_1();         // 基础对象(lv_obj)，"Hello, LVGL
 
 
     while(1) {

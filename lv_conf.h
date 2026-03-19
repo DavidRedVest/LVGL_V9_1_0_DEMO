@@ -27,6 +27,15 @@
     #define LV_USE_WINDOWS 0
     #define LV_USE_SDL 1
     #define LV_USE_OS   LV_OS_PTHREAD
+#if LV_USE_SDL
+    #define LV_SDL_INCLUDE_PATH     <SDL2/SDL.h>
+    #define LV_SDL_RENDER_MODE      LV_DISPLAY_RENDER_MODE_DIRECT   /*LV_DISPLAY_RENDER_MODE_DIRECT is recommended for best performance*/
+    #define LV_SDL_BUF_COUNT        1    /*1 or 2*/
+    #define LV_SDL_FULLSCREEN       0    /*1: Make the window full screen by default*/
+    #define LV_SDL_DIRECT_EXIT      1    /*1: Exit the application when all SDL windows are closed*/
+    #define LV_SDL_MOUSEWHEEL_MODE  LV_SDL_MOUSEWHEEL_MODE_ENCODER  /*LV_SDL_MOUSEWHEEL_MODE_ENCODER/CROWN*/
+#endif
+
 #else
 
     /* 预留给未来的STM32 裸机或 RTOS环境 */
@@ -862,7 +871,7 @@
  * DEVICES
  *==================*/
 
- #if 1
+ #if 0
 /*Use SDL to open window on PC and handle mouse and keyboard*/
 #define LV_USE_SDL              1
 #if LV_USE_SDL
