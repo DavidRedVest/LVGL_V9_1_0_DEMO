@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Mac OS",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/liszt/home/ffmpeg_dynamic_build/common_libs/include",
+                "/Users/liszt/home/ffmpeg_dynamic_build/common_libs/include/SDL2"
+            ],
+            "defines": [
+                "__APPLE__"
+            ],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
+        }
+    ],
+    "version": 4
+}
