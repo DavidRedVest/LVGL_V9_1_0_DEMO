@@ -18,6 +18,8 @@
 
 - 增加.gitignore文件，不上传.o文件和最终的可执行文件
 
+- 完善 c_cpp_properties.json 配置，解决代码补全提示
+
 
 
 
