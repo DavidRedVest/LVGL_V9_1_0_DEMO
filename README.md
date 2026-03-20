@@ -22,6 +22,31 @@
 
 - 修复 lv_conf.h下LV_USE_SDL重复定义的问题，同时测试了win11下运行正常
 
+- 移除原有的 Makefile，新增 CMakeLists.txt 作为全局构建脚本
+
+- 配置 SDL2 动态库的绝对搜索路径，并利用 RPATH 解决 macOS 运行时加载问题
+
+- 调整 target_include_directories 作用域为 PUBLIC，解决 LVGL 内部找不到 lv_conf.h 的问题
+
+- 将官方 lvgl/demos 源码加入编译树，修复 _lv_demo_widgets 链接失败问题
+
+- 统一 Mac 模拟器与未来 MCU 裸机工程的构建逻辑抽象
+
+- CMake使用方法：
+
+  ```C
+  //进入CMake编译目录
+  cd build/
+  //重新解析CMakeLists.txt并生成构建树
+  cmake ..
+  //再次启动多线程编译
+  cmake --build . -j10
+  //运行可执行程序
+  ./run_lvgl
+  ```
+
+  
+
 
 
 
